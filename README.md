@@ -1,9 +1,9 @@
-# Official Electronero Pulse Website
+# Official Crystaleum Website
 
 ### Clone the repo
 ```
-git clone https://github.com/electronero-pulse/electroneropulse.github.io electroneropulse-site
-cd electroneropulse-site
+git clone https://github.com/crystaleum/crystaleum.github.io crystaleumsite
+cd crystaleumsite
 npm i
 npm start
 ```
@@ -18,7 +18,7 @@ Change port the app runs on by starting the app with ```node ./bin/www 300```
 To set the port for production set the process.env before you run the app, or just edit the following Start script in package.json 
 ```
 {
-  "name": "electroneropulse",
+  "name": "crystaleum",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -28,7 +28,7 @@ To set the port for production set the process.env before you run the app, or ju
   Modify the start script and add port as seen below:
   
   {
-  "name": "electroneropulse",
+  "name": "crystaleum",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -43,11 +43,11 @@ To set the port for production set the process.env before you run the app, or ju
 Example NGINX server for HTTP, ssl is not very different.
 ```
 server {
-    root /usr/share/nginx/electroneropulse.org;
+    root /usr/share/nginx/crystaleum.org;
     index index.php index.html index.htm;
 
     listen 80;
-    server_name electroneropulse.com electroneropulse.net electroneropulse.org electroneropulse.info;
+    server_name crystaleum.com crystaleum.net crystaleum.org crystaleum.info;
 
     location / {
         proxy_pass http://your_server_ip:3000;
@@ -88,8 +88,8 @@ http {
 
   server { # php/fastcgi
     listen       80;
-    server_name  electroneropulse.com electroneropulse.net electroneropulse.org electroneropulse.info;
-    access_log   logs/electroneropulse.access.log  main;
+    server_name  crystaleum.com crystaleum.net crystaleum.org crystaleum.info;
+    access_log   logs/crystaleum.access.log  main;
     root         html;
 
     location ~ \.php$ {
@@ -99,8 +99,8 @@ http {
 
   server { # simple reverse-proxy
     listen       80;
-    server_name  electroneropulse.com electroneropulse.net electroneropulse.org electroneropulse.info;
-    access_log   logs/electroneropulse.access.log  main;
+    server_name  crystaleum.com crystaleum.net crystaleum.org crystaleum.info;
+    access_log   logs/crystaleum.access.log  main;
 
     # serve static files
     location ~ ^/(images|javascript|js|css|flash|media|static)/  {
@@ -139,8 +139,8 @@ To use Apache first we must enable some mods:
 Example Apache server for HTTP. 
 ```
 <VirtualHost *:80>
-	ServerName electroneropulse.org
-	ServerAlias electroneropulse.com electroneropulse.net electroneropulse.info
+	ServerName crystaleum.org
+	ServerAlias crystaleum.com crystaleum.net crystaleum.info
    
     # Servers to proxy the connection, or;
     # List of application servers:
