@@ -1,269 +1,158 @@
 <%# views/layout.ejs %>
 <!DOCTYPE html>
-<html lang="zxx" class="js">
+<html lang="en">
 <head>
+    <!--- Basic Page Needs  -->
     <meta charset="utf-8">
-    <meta name="author" content="Goldnero: An Electronero Network collection ">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Goldnero">
-    <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="/public/favicon.ico">
-    <!-- Site Title  -->
-    <title>Goldnero</title>
-    <!-- Vendor Bundle CSS -->
-    <link rel="stylesheet" href="/assets/css/vendor.bundle.css?v=2">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="/assets/css/style.css?ver=113">
-    <link rel="stylesheet" href="/assets/css/theme.css?ver=113">
-    <!-- Custom styles from etx dev team -->
-    <link rel="stylesheet" href="/assets/css/custom.css">
-    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css?ver=114">
-        <link rel="apple-touch-icon" sizes="57x57" href="/public/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/public/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/public/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/public/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/public/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/public/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/public/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/public/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/public/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/public/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
-    <link rel="manifest" href="/public/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/public/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
+    <title>Crystaleum</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/stellarnav.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.ico">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
-
-<body class="theme-dark" data-spy="scroll" data-target="#mainnav" data-offset="80">
 <div id="google_translate_element"></div><script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT}, 'google_translate_element');
 }
 </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!-- Header -->
-    <header class="site-header is-sticky">
-
-        <!-- Place Particle Js -->
-        <div id="particles-js" class="particles-container particles-js"></div>
-
-        <!-- Navbar -->
-        <div class="navbar navbar-expand-lg is-transparent" id="mainnav">
-            <nav class="container">
-
-                <a class="navbar-brand" href="./">
-                    <img class="logo logo-dark" alt="logo" src="/images/logo.png" srcset="/images/logo2x.png 2x">
-                    <img class="logo logo-light" alt="logo" src="/images/logo-white.png" srcset="/images/logo-white2x.png 2x">
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
-                    <span class="navbar-toggler-icon">
-                        <span class="ti ti-align-justify"></span>
-                    </span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="navbarToggle">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link menu-link" href="#intro">About<span class="sr-only">(current)</span></a></li>
-                        <li class="nav-item"><a class="nav-link menu-link" href="#tokenSale">Launch</a></li>
-            <li class="nav-item"><a class="nav-link menu-link" href="/hardfork">Hard-Fork</a></li>
-                        <li class="nav-item"><a class="nav-link menu-link" href="https://medium.com/@goldnero">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link menu-link" href="#roadmap">Roadmap</a></li>
-                        <li class="nav-item"><a class="nav-link menu-link" href="#team">Community</a></li>
-                        <li class="nav-item"><a class="nav-link menu-link" href="#faq">FAQ</a></li>
-            <li class="nav-item"><a class="nav-link menu-link" href="//goldnero.org/docs">DOCS</a></li>
-                        <li class="nav-item"><a class="nav-link menu-link" href="#contact">Contact</a></li>
-                    </ul>
-                    <ul class="navbar-nav navbar-btns">
-                <li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" target="_blank" href="https://goldnero.org/public/doc/Bulletproof%20RingCT.pdf">BulletProof RCT</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" href="https://goldnero.org/public/doc/goldnero-whitepaper.pdf">Whitepaper</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-sm btn-outline menu-link" target="_blank" href="https://github.com/goldnero-project/goldnero">Wallets</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <!-- End Navbar -->
-
-        <!-- Banner/Slider -->
-        <div id="header" class="banner banner-full banner-curb d-flex align-items-center">
-            <div class="container">
-                <div class="banner-content">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="header-txt tab-center mobile-center">
-                </br>
-                                <h1>Hard Fork Initialized</h1>
-                <p><i>A decentralized hard fork of ETNX</i></p>
-                <p>GPU/CPU mining algo == Cryptonight Fast!</p>
-                <p><a href="https://medium.com/@goldnero">Read Latest Goldnero(LTNX) News on <img width="30px" height="30px" src="https://image.ibb.co/h7n3dd/1_a_Gne_Pq_NZ97de_TWaa4m_BU2_A.png" /></a></i></p>
-                <p>As seen on <a href="https://themerkle.com/electroneum-hard-fork-electronero-combines-features-from-different-cryptonote-currencies/"><img width="30px" height="30px" src="/images/the-merkle.png" /></a> & <a href="http://www.bitcoininsider.org/article/24743/electroneum-hard-fork-electronero-combines-features-different-cryptonote-currencies"><img width="30px" height="30px" src="/images/bitcoin-insider.png" /></a>
-                </p>
-                                <p class="lead color-secondary">Electronero Hard Fork. Public Main Net 04/04/2019</p>
-                                <ul class="btns">
-                                    <li><a href="https://twitter.com/goldnero" class="btn">Twitter</a></li>
-                                    <li><a href="https://t.me/goldnero" class="btn btn-alt">Telegram</a></li>
-                                </ul>
-                                <ul class="social">
-                                    <!--
-                                    <li><a target="_blank" href="https://t.me/Goldnero"><em class="fa fa-telegram"></em></a></li>
-                                    <li><a target="_blank" href="https://twitter.com/goldnero"><em class="fa fa-twitter"></em></a></li>
-                                    <li><a target="_blank" href="https://instagram.com/electronero"><em class="fa fa-instagram"></em></a></li>
-                                    <li><a target="_blank" href="https://github.com/Goldnero/"><em class="fa fa-github"></em></a></li>
-                                    <li><a target="_blank" href="https://www.reddit.com/user/electronero_official"><em class="fa fa-reddit"></em></a></li>
-                                    <li><a target="_blank" href="https://discord.gg/anVDzEY"><em class="fa fa-discord"></em></a></li>
-
-                                    -->
-                                                        <li><a target="_blank" href="https://t.me/Goldnero"><em class="fab fa-telegram"></em></a></li>
-                                    <li><a target="_blank" href="https://twitter.com/Goldnero"><em class="fab fa-twitter"></em></a></li>
-                                    <li><a target="_blank" href="https://instagram.com/electronero"><em class="fab fa-instagram"></em></a></li>
-                                    <li><a target="_blank" href="https://github.com/Goldnero/"><em class="fab fa-github"></em></a></li>
-                                    <li><a target="_blank" href="https://www.reddit.com/r/Electronero_official/"><em class="fab fa-reddit"></em></a></li>
-                                    <li><a target="_blank" href="https://discord.gg/anVDzEY"><em class="fab fa-discord"></em></a></li>
-
-                                </ul>
-                            </div>
-                        </div><!-- .col  -->
-                        <div class="col-lg-5 offset-lg-1 col-md-12">
-                            <div class="countdown-box countdown-header text-center">
-                                <span class="extra-line"></span>
-                                <div class="token-countdown d-flex align-content-stretch" data-date="2019/04/04"></div>
-                            </div>
-                        </div><!-- .col  -->
-                    </div><!-- .row  -->
-                </div><!-- .banner-content  -->
-            </div><!-- .container  -->
-        </div>
-        <!-- End Banner/Slider -->
-    </header>
-    <!-- End Header -->
-
-    <div class="container">
-
-       <%- content %>
-    </div><!-- /.container -->
-
-    <!-- Start Section -->
-    <div class="section section-pad section-bg-alt" id="contact">
+<!-- insert theme below -->
+<body class="home1-bg-color">
+    <div id="preloader"></div>
+    <header>
         <div class="container">
-            <div class="row text-center">
-                <div class="col">
-                    <div class="section-head">
-                        <h2 class="section-title">Contact Us
-                            <!--<span>Contact</span>-->
-                        </h2>
-                        <p>Any question? Reach out to us and we’ll get back to you shortly.</p>
+            <div class="row">
+                <div class="col-lg-2 col-sm-6 col-6">
+                    <div class="logo">
+                        <a href="index.html">Crystaleum</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-sm-12 col-12">
+                    <div class="main-menu">
+                        <div class="stellarnav">
+                            <nav class="menu-list">
+                                <ul>
+                                    <li><a href="#_about" class="smoothscroll">About Us</a></li>
+                                    <li><a href="#_token" class="smoothscroll">Trade</a></li>
+                                    <li><a href="#_roadmap" class="smoothscroll">Roadmap</a></li>
+                                    <li><a href="#_team" class="smoothscroll">Team</a></li>
+                                    <li><a href="#_contact" class="smoothscroll">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 d-none d-lg-block">
+                    <div class="ht-buy-token">
+                        <a href="#" class="link btn-style-1">Crystaleum</a>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2" align="center">
-                    <ul class="contact-info" align="center">
-                        <li><em class="fab fa-twitter"></em><a href="https://twitter.com/goldnero"><span>Tweet @goldnero</span></a></li>
-                        <li><em class="fa fa-envelope"></em><a href="mailto:electronero.official@gmail.com"><span>Send Electronero Core an Email</span></a></li>
-                        <li><em class="fab fa-telegram"></em><a href="https://t.me/goldnero"><span>Join Goldnero on Telegram</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <form id="contact-form" class="form-message text-center" action="contact/send" method="post">
-                        <div class="form-results"></div>
-                        <div class="input-field">
-                            <input name="name" type="text" class="input-line form-control required">
-                            <label for="name" class="input-title">Your Name</label>
+        </div>
+    </header>
+<!-- ADD CONTENT ABOVE -->
+       <%- content %>
+<!-- ADD CONTENT BELOW -->
+    <footer>
+        <div class="footer-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12">
+                        <div class="footer-widget">
+                            <h2 class="title">Crizal</h2>
+                            <p class="text">We offers users a fully operational long-term rental platform. It plans to leverages blockchain technology to ensure seamless rental.</p>
                         </div>
-                        <div class="input-field">
-                            <input name="email" type="email" class="input-line form-control required email">
-                            <label for="email" class="input-title">Your Email</label>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-12">
+                        <div class="footer-widget">
+                            <h3 class="title-2">Follow Us</h3>
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <ul class="social">
+                                        <li><a href="#"><span class="ico"><i class="fab fa-facebook-f"></i></span> Facebook</a></li>
+                                        <li><a href="#"><span class="ico"><i class="fab fa-linkedin-in"></i></span> Linkedin</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <ul class="social">
+                                        <li><a href="#"><span class="ico"><i class="fab fa-twitter"></i></span> Twitter</a></li>
+                                        <li><a href="#"><span class="ico"><i class="fab fa-google-plus"></i></span> Google</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-field">
-                            <textarea name="message" type="text" class="txtarea input-line required"></textarea>
-                            <label for="message" class="input-title">Your Message</label>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-12">
+                        <div class="footer-widget">
+                            <h3 class="title-2">Follow Us</h3>
+                            <p class="text">You will always be update with the latest news from us.</p>
+                            <div class="newsletter">
+                                <form action="#">
+                                    <div class="newsletter-inputbox">
+                                        <input type="text" placeholder="Enter Email Address">
+                                        <button class="btn-style-3">sUBSCRIBE</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <input type="text" class="d-none" name="form-anti-honeypot" value="">
-                        <div class="input-field">
-                            <button type="submit" onclick="setTimeout(formSubmit, 1000)" class="slideOut btn">Submit</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Section -->
-
-
-    <!-- Start Section -->
-    <div class="section subscribe-section section-pad-md section-bg section-connect">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-6 offset-md-3">
-                    <h4 class="section-title-md">Don't miss out, Stay updated</h4>
-                    <form id="subscribe-form" action="contact/subscribe" method="post" class="subscription-form inline-form">
-                        <input type="email" name="email" class="input-round form-control required email" placeholder="Enter your email address" >
-                        <input type="text" class="d-none" name="form-anti-honeypot" value="">
-                        <button type="submit" onclick="setTimeout(subSubmit, 1000)" class="slideOut btn btn-plane">Subscribe</button>
-                        <div class="subscribe-results"></div>
-                    </form>
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="copyright">
+                            <p class="text">2019 Copyright Crizal. All Rights Reserved</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="footer-links">
+                            <ul class="links">
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Terms & Condition</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Section -->
-
-
-    <!-- Start Section -->
-    <div class="section footer-scetion no-pt section-pad-sm section-bg">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <ul class="social">
-                        <!--
-                        <li><a target="_blank" href="#"><em class="fa fa-facebook"></em></a></li>
-                        <li><a target="_blank" href="https://twitter.com/goldnero"><em class="fa fa-twitter"></em></a></li>
-                        <li><a target="_blank" href="https://instagram.com/goldnero"><em class="fa fa-instagram"></em></a></li>
-                        <li><a target="_blank" href="http://github.com/goldnero/"><em class="fa fa-github"></em></a></li>
-                        <li><a target="_blank" href="#"><em class="fa fa-reddit"></em></a></li>
-                        <li><a target="_blank" href="https://discord.gg/anVDzEY"><em class="fa fa-discord"></em></a></li>
-                        <li><a target="_blank" href="https://t.me/goldnero"><em class="fa fa-telegram"></em></a></li>
-                        -->
-                        <li><a target="_blank" href="https://www.facebook.com/etxofficial"><em class="fab fa-facebook"></em></a></li>
-                        <li><a target="_blank" href="https://twitter.com/goldnero"><em class="fab fa-twitter"></em></a></li>
-                        <li><a target="_blank" href="https://instagram.com/electronero"><em class="fab fa-instagram"></em></a></li>
-                        <li><a target="_blank" href="http://github.com/goldnero/"><em class="fab fa-github"></em></a></li>
-                        <li><a target="_blank" href="https://www.reddit.com/user/electronero_official/"><em class="fab fa-reddit"></em></a></li>
-                        <li><a target="_blank" href="https://discord.gg/anVDzEY"><em class="fab fa-discord"></em></a></li>
-                        <li><a target="_blank" href="https://t.me/goldnero"><em class="fab fa-telegram"></em></a></li>
-
-                    </ul>
-                    <span class="copyright-text">
-                        <p><a href="/legal#copyright">Copyright</a> &copy; 2018-2019, Electronero Project Core development.</p>
-            <p>As seen on <a href="https://themerkle.com/electroneum-hard-fork-electronero-combines-features-from-different-cryptonote-currencies/"><img width="30px" height="30px" src="/images/the-merkle.png" /></a> & <a href="http://www.bitcoininsider.org/article/24743/electroneum-hard-fork-electronero-combines-features-different-cryptonote-currencies"><img width="30px" height="30px" src="/images/bitcoin-insider.png" /></a></p>
-                        <p><span>All trademarks and copyrights belong to their respective owners. </span></p>
-            <p><a href="/legal">Terms & Conditions</a> || <a href="/legal#privacy"> Privacy Policy</a></p>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Section -->
-
-    <!-- Preloader !remove please if you do not want -->
-    <div id="preloader">
-        <div id="loader"></div>
-        <div class="loader-section loader-top"></div>
-        <div class="loader-section loader-bottom"></div>
-    </div>
-    <!-- Preloader End -->
-
-    <!-- JavaScript (include all script here) -->
-    <script src="/assets/js/jquery.bundle.js?ver=113"></script>
-    <script src="/assets/js/script.js?ver=113"></script>
-
-    <!-- form validation animations -->
-    <script src="/assets/js/formchecker.js"></script>
-
+    </footer>
+    <!-- Scripts -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/stellarnav.min.js"></script>
+    <script src="js/jquery.scrollUp.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
