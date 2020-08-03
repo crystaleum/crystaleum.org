@@ -44,3 +44,47 @@ pre.highlight>code {
     background: #f3f704; 
 }
 
+
+/*! 13.0 - CONTACT SECTION */
+.contact-section { overflow: hidden; }
+
+.contact-info { margin: 0 -30px; padding-bottom: 60px; display: flex; /* @v1.1.0 s */ /* @v1.1.0 e */ }
+.contact-info li { margin: 0 30px; }
+.contact-info li .fa { font-size: 20px; line-height: 38px; width: 38px; text-align: center; color: #fff; background-image: linear-gradient(to right, #2b56f5 0%, #46bdf4 100%); border-radius: 50%; margin-right: 15px; }
+.contact-info li .fab { font-size: 20px; line-height: 38px; width: 38px; text-align: center; color: #fff; background-image: linear-gradient(to right, #2b56f5 0%, #46bdf4 100%); border-radius: 50%; margin-right: 15px; }
+.contact-info-alt { margin-top: 20px; }
+.contact-info-alt li { margin: 18px 0; }
+.contact-info-alt li .fa { position: relative; font-size: 16px; line-height: 38px; width: 38px; text-align: center; color: #fff; border-radius: 50%; margin-right: 15px; background-image: linear-gradient(to right, #2b56f5 0%, #46bdf4 100%); z-index: 1; }
+.contact-info-alt li .fab { position: relative; font-size: 16px; line-height: 38px; width: 38px; text-align: center; color: #fff; border-radius: 50%; margin-right: 15px; background-image: linear-gradient(to right, #2b56f5 0%, #46bdf4 100%); z-index: 1; }
+.contact-info-alt li .fa:after { position: absolute; content: ""; top: 2px; left: 2px; width: 34px; height: 34px; border-radius: 50%; background: #0d42b2; z-index: 0; }
+.contact-info-alt li .fa:before { position: relative; z-index: 3; }
+.section-pro .contact-info-alt li .fa { color: #46bdf4; }
+.section-pro .contact-info-alt li .fa:after { background: #fff; }
+.section-pro-alt .contact-info-alt li .fa { color: #46bdf4; }
+.section-pro-alt .contact-info-alt li .fa:after { background: #ebf3fc; }
+
+@media only screen and (max-width: 1199px) { .contact-info { display: block; }
+  .contact-info li { float: left; width: 33%; text-align: center; margin: 0 0 20px; }
+  .contact-info li span { display: block; }
+  .contact-info li .fa { font-size: 16px; margin-bottom: 15px; } }
+@media only screen and (max-width: 767px) { .contact-info { padding-bottom: 15px; }
+  .contact-info li { float: none; width: 100%; } }
+.form-message { /* @v1.1.0 s */ /* @v1.1.0 e */ }
+.form-message .input-field { margin-bottom: 20px; position: relative; }
+.form-message .input-field .btn { margin-top: 10px; }
+.form-message .input-field label.input-title { position: absolute; width: 100%; top: 18px; left: 0; color: #8284a5; z-index: 1; transition: all .5s ease; }
+.form-message .input-field .input-line { position: relative; line-height: 46px; z-index: 2; background: transparent; border: none; width: 100%; text-align: center; color: #fff; border-bottom: 1px solid #46bdf4; margin-top: 8px; outline: none; }
+.form-message .input-field .input-line.error { border-bottom-color: #d2636d; }
+.form-message .input-field .txtarea { height: 105px; resize: none; outline: none; line-height: 21px; padding-top: 14px; }
+.form-message .input-field .txtarea + .input-title { top: 75px; }
+.form-message .input-field .txtarea + label + .input-title { top: 75px; }
+.form-message .input-field.input-focused .input-title { top: -7px; transform: scale(0.8); }
+.form-message .input-field.input-focused .txtarea + label + .input-title { top: -7px; transform: scale(0.8); }
+.form-message .input-field label.error { display: none !important; }
+.form-message.text-left .input-field .input-line { text-align: left; }
+.form-message.text-left label.input-title { transform-origin: left; }
+.io-azure .form-message .input-field label.input-title { color: #7ab9ff; }
+.io-azure .section-pro .form-message .input-field .input-line, .io-azure .section-pro-alt .form-message .input-field .input-line { color: #313c56; }
+
+.theme-light .form-message .input-field label.input-title, .io-dark-light .section-light .form-message .input-field label.input-title, .io-dark-light .section-light-alt .form-message .input-field label.input-title { color: #8284a5; }
+.theme-light .form-message .input-field .input-line, .io-dark-light .section-light .form-message .input-field .input-line, .io-dark-light .section-light-alt .form-message .input-field .input-line { color: #3c3c3c; }
