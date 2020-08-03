@@ -55,7 +55,7 @@ router.post('/contact/send', function (req, res) {
     var mailOption = {
         from: '' + formSubmittedName + ' <' + formSubmittedEmail + '>', // sender address
         to: sendFormToStaff, // staff addresses
-        subject: formSubmittedEmail, // email in subject
+        subject: 'Crystaleum Form Submission from: '+formSubmittedEmail, // email in subject
         text: formSubmittedMessage, // text body to the left, and HTML body below
         html: '<p>Crystaleum Form Submission:</p><ul>Name: <li>' + formSubmittedName + '</li>Email: <li>' + formSubmittedEmail + '</li>Message: <li>' + formSubmittedMessage + '</li></ul>'
     }
