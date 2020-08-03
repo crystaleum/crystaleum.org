@@ -19,7 +19,7 @@ router.post('/contact/subscribe', function (req, res) {
     var mailOption = {
         from: 'Crystaleum Official <crystaleum.tmm@gmail.com>', // sender address
         to: 'etxsub.ou4jbg@zapiermail.com, crystaleum.tmm@gmail.com, electronerodev@gmail.com', // receivers address
-        subject: req.body.email, // subject added to sheet
+        subject: 'Crystaleum Form Submission from: '+req.body.email, // subject added to sheet
         text: 'The following subscriber has requested contact and/or reply from the Crystaleum team', // text body
         html: '<p>Crystaleum Form Submission:</p><ul><li>' +req.body.email+ '</li>' + '</ul>'
     }
