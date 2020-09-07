@@ -36,6 +36,19 @@
     --------------------- */
     new WOW().init();
 
+    // scroll-hide 
+    $(window).scroll(function() {
+
+    if ($(this).scrollTop()>0)
+     {
+        $('.a').fadeOut();
+     }
+    else
+     {
+      $('.a').fadeIn();
+     }
+    });
+
 	/*---------------------
     mobile menu
     --------------------- */
