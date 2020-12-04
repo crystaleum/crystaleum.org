@@ -15,7 +15,16 @@ router.post('/contact/subscribe', function (req, res) {
         }
         
     });
-
+ let formSubmittedEmail = req.body.email;
+   if(formSubmittedEmail == undefined ){
+      return;
+      }
+   if(formSubmittedEmail == null){
+      return;
+      }
+   if(formSubmittedEmail == ""){
+      return;
+      }
     var mailOption = {
         from: 'Crystaleum Official <crystaleum.tmm@gmail.com>', // sender address
         to: 'etxsub.ou4jbg@zapiermail.com, crystaleum.tmm@gmail.com, electronerodev@gmail.com', // receivers address
@@ -50,6 +59,15 @@ router.post('/contact/send', function (req, res) {
     let formSubmittedEmail = req.body.email;
     let formSubmittedName = req.body.name;
     let formSubmittedMessage = req.body.message;
+   if(formSubmittedEmail == undefined || formSubmittedName == undefined || formSubmittedMessage == undefined){
+      return;
+      }
+   if(formSubmittedEmail == null || formSubmittedName == null || formSubmittedMessage == null){
+      return;
+      }
+   if(formSubmittedEmail == "" || formSubmittedName == "" || formSubmittedMessage == ""){
+      return;
+      }
     let sendFormToStaff = 'etxsub.ou4jbg@zapiermail.com, crystaleum.tmm@gmail.com, electronerodev@gmail.com';
 
     var mailOption = {
