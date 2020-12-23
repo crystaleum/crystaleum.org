@@ -296,18 +296,19 @@ function start() {
 		(async() => {
 		  start();
 		  // torus.showWallet("transfer"); // default: 'home'
-		  const paymentStatus = torus.initiateTopup(paymentProvider, transferParams);
-	          console.log(paymentStatus);
-		  function userInfo() {
-			return torus.getUserInfo();
-			console.log(userInfo);
-		  }userInfo();
+		  
 		  console.log('after start');
 		})();
         }
         (async() => {
 		  console.log('Torus initialized before start');
 		  await torus.init(); 
+		  const paymentStatus = await torus.initiateTopup(paymentProvider, transferParams);
+	          console.log(paymentStatus);
+		  function userIn() {
+			var userInfo = return await torus.getUserInfo();
+			console.log(userInfo);
+		  }userIn();
 		  console.log('after init');
 		})();
         function formatState (state) {
