@@ -189,10 +189,7 @@ async function myfunction() {
 		console.log("userSelectedValue: " + userSelectedValue)
 
 	};	
-	const paymentStatus = await torus.initiateTopup(paymentProvider, transferParams);
-	// console.log(paymentStatus);
-	const userInfo = await torus.getUserInfo();
-	console.log(userInfo);
+			
 	console.log('Inside of myfunction');
 }
 
@@ -299,6 +296,12 @@ function start() {
 		(async() => {
 		  start();
 		  // torus.showWallet("transfer"); // default: 'home'
+		  const paymentStatus = await torus.initiateTopup(paymentProvider, transferParams);
+	          console.log(paymentStatus);
+		  function userInfo() {
+			return await torus.getUserInfo();
+			console.log(userInfo);
+		  }userInfo();
 		  console.log('after start');
 		})();
         }
