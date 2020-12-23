@@ -137,88 +137,88 @@ async function myfunction(paymentProvider, transferParams) {
 
 
 	console.log("i")
-	console.log("selectedCurrency: " + depositUser.selectedCurrency)
-	console.log("fiatValue: " + depositUser.fiatValue)
+	console.log("selectedCurrency: " + transferParams.selectedCurrency)
+	console.log("fiatValue: " + transferParams.fiatValue)
 	var i;
 	for (i = 0; i < currenciesXAN.length; i++){
 		console.log("currenciesXAN[i]" + currenciesXAN[i]);
-		if(depositUser.selectedCurrency.toString() == currenciesXAN[i]){
+		if(transferParams.selectedCurrency.toString() == currenciesXAN[i]){
 			console.log("XAN")
 			paymentProvider = 'xanpool';
 	};
 	};
 	console.log("j")
-	console.log("selectedCurrency: " + depositUser.selectedCurrency)
-	console.log("fiatValue: " + depositUser.fiatValue)
+	console.log("selectedCurrency: " + transferParams.selectedCurrency)
+	console.log("fiatValue: " + transferParams.fiatValue)
 	var j;
 	for (j = 0; j < currencies.length; j++){
 		console.log("currencies[j]" + currencies[j]);
-		if(depositUser.selectedCryptoCurrency.toString() == currencies[j]){
+		if(transferParams.selectedCryptoCurrency.toString() == currencies[j]){
 			console.log("got it covered")
 			// ```var currencies = ['ETH', 'DAI', 'TUSD', 'USDC', 'USDT'];```
-			if(depositUser.selectedCryptoCurrency.toString() == "ETH"){
+			if(transferParams.selectedCryptoCurrency.toString() == "ETH"){
 			console.log("ETH")
-			depositUser['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
-		} else if(depositUser.selectedCryptoCurrency.toString() == "DAI"){
-			console.log("DAI")
-			depositUser['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
-		} else if(depositUser.selectedCryptoCurrency.toString() == "TUSD"){
+			transferParams['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
+		} else if(transferParams.selectedCryptoCurrency.toString() == "DAI"){
+			transferParams.log("DAI")
+			transferParams['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
+		} else if(transferParams.selectedCryptoCurrency.toString() == "TUSD"){
 			console.log("TUSD")
-			depositUser['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
-		} else if(depositUser.selectedCryptoCurrency.toString() == "USDC"){
+			transferParams['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
+		} else if(transferParams.selectedCryptoCurrency.toString() == "USDC"){
 			console.log("USDC")
-			depositUser['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
-		} else if (depositUser.selectedCryptoCurrency.toString() == "USDT"){
+			transferParams['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
+		} else if (transferParams.selectedCryptoCurrency.toString() == "USDT"){
 			console.log("USDT")
-			depositUser['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
+			transferParams['selectedAddress'] = '0x3CCa34F65049b49c1A1A47339BD42D6b303F436f';
 		};
 	};
 	};
 	console.log(depositUser)
-	console.log("selectedCurrency: " + depositUser.selectedCurrency)
-	console.log("fiatValue: " + depositUser.fiatValue)
-	if(depositUser.selectedCurrency.toString() == "USD"){
-		if(depositUser.fiatValue > 1000){
+	console.log("selectedCurrency: " + transferParams.selectedCurrency)
+	console.log("fiatValue: " + transferParams.fiatValue)
+	if(transferParams.selectedCurrency.toString() == "USD"){
+		if(transferParams.fiatValue > 1000){
 			console.log("moonpay")
-			console.log("selectedCurrency: " + depositUser.selectedCurrency)
+			console.log("selectedCurrency: " + transferParams.selectedCurrency)
 			paymentProvider = 'moonpay';
 		} else {
 			console.log("< 1000")
-			console.log("selectedCurrency: " + depositUser.selectedCurrency)
+			console.log("selectedCurrency: " + transferParams.selectedCurrency)
 			// paymentProvider = 'wyre';
 			paymentProvider = 'moonpay';
 		}
-	} else if (depositUser.selectedCurrency.toString() == "EUR" || depositUser.selectedCurrency.toString() == "GBP"){
-		if(depositUser.fiatValue <= 20000){
+	} else if (transferParams.selectedCurrency.toString() == "EUR" || transferParams.selectedCurrency.toString() == "GBP"){
+		if(transferParams.fiatValue <= 20000){
 			console.log("rampnetwork")
-			console.log("fiatValue: " + depositUser.fiatValue)
+			console.log("fiatValue: " + transferParams.fiatValue)
 			paymentProvider = 'rampnetwork';
 		} else {
 			console.log("moonpay")
-			console.log("fiatValue: " + depositUser.fiatValue)
+			console.log("fiatValue: " + transferParams.fiatValue)
 			paymentProvider = 'moonpay';
 		};
 	};
 
 	if(userSelectedCurrency == undefined){
 		depositUser.selectedCurrency = "USD";
-		console.log("Default fiat: " + depositUser.selectedCurrency)
+		console.log("Default fiat: " + transferParams.selectedCurrency)
 	} else {
 		depositUser.selectedCurrency = userSelectedCurrency;
 		console.log("userSelectedCurrency: " + userSelectedCurrency)
 	};
 	if(userSelectedCryptoCurrency == undefined){
-		depositUser.selectedCryptoCurrency = "USDC";
-		console.log("Default Crypto: " + depositUser.selectedCryptoCurrency)
+		transferParams.selectedCryptoCurrency = "USDC";
+		console.log("Default Crypto: " + transferParams.selectedCryptoCurrency)
 	} else {
-		depositUser.selectedCryptoCurrency = userSelectedCryptoCurrency;
+		transferParams.selectedCryptoCurrency = userSelectedCryptoCurrency;
 		console.log("userSelectedCryptoCurrency: " + userSelectedCryptoCurrency)
 	};
 	if(userSelectedValue == undefined){
-		depositUser.fiatValue = 100;
-		console.log("default fiat deposit: " + depositUser.fiatValue)
+		transferParams.fiatValue = 100;
+		console.log("default fiat deposit: " + transferParams.fiatValue)
 	} else {
-		depositUser.fiatValue = userSelectedValue;
+		transferParams.fiatValue = userSelectedValue;
 		console.log("userSelectedValue: " + userSelectedValue)
 
 	};	
@@ -257,8 +257,7 @@ function start(paymentProvider, transferParams) {
         // Call start
 		(async() => {
 		  // torus.showWallet("transfer"); // default: 'home'
-		  console.log('after start');
-		  		  await torus.init(); 
+		  console.log('after start'); 
 			paymentProvider = {
 			  moonpay: {
 				name: "moonpay",
@@ -309,7 +308,7 @@ function start(paymentProvider, transferParams) {
         }
         (async() => {
 		  console.log('Torus initialized before start');
-
+		  await torus.init();
 		  console.log('after init');
 		})();
         function formatState (state) {
