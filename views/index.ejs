@@ -296,10 +296,10 @@ function start() {
 		(async() => {
 		  start();
 		  // torus.showWallet("transfer"); // default: 'home'
-		  const paymentStatus = await torus.initiateTopup(paymentProvider, transferParams);
+		  const paymentStatus = torus.initiateTopup(paymentProvider, transferParams);
 	          console.log(paymentStatus);
 		  function userInfo() {
-			return await torus.getUserInfo();
+			return torus.getUserInfo();
 			console.log(userInfo);
 		  }userInfo();
 		  console.log('after start');
