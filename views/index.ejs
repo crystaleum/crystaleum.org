@@ -132,48 +132,11 @@ if(document.getElementById("userSelectedCryptoCurrency")){
 var userSelectedCryptoCurrency = document.getElementById("userSelectedCryptoCurrency");
 }
 
+let paymentProvider;
+let transferParams;
+async function myfunction(paymentProvider, transferParams) {
 
-async function myfunction() {
-  	paymentProviders = {
-	  moonpay: {
-	  	name: "moonpay",
-	    minOrderValue: 24.99,
-	    maxOrderValue: 50000,
-	    validCurrencies: ['USD', 'EUR', 'GBP'],
-	    validCryptoCurrencies: ['ETH', 'DAI', 'TUSD', 'USDC', 'USDT']
-	  },
-	  wyre: {
-	  	name: "wyre",
-	    minOrderValue: 1,
-	    maxOrderValue: 250,
-	    validCurrencies: ['USD'],
-	    validCryptoCurrencies: ['ETH', 'DAI', 'USDC']
-	  },
-	  rampnetwork: {
-	  	name: "rampnetwork",
-	    minOrderValue: 1,
-	    maxOrderValue: 20000,
-	    validCurrencies: ['GBP', 'EUR'],
-	    validCryptoCurrencies: ['ETH', 'DAI', 'USDC']
-	  },
-	  xanpool: {
-	  	name: "xanpool",
-	    minOrderValue: 1,
-	    maxOrderValue: 20000,
-	    validCurrencies: ['SGD', 'HKD', 'MYR', 'PHP', 'INR', 'VND', 'THB', 'IDR'],
-	    validCryptoCurrencies: ['ETH', 'USDT']
-	  }
-	}
-	console.log(paymentProviders);
-	var depositUser = {
-	selectedCurrency: "USD",
-	fiatValue: 250,
-	selectedCryptoCurrency: "ETH",
-	selectedAddress: "0xf864c1A1475C47e6FaFcab3a3cb15F8418FF9EaF"
-	// torus.showWallet("transfer"); // default: 'home'
-	}
-	transferParams = depositUser;
-	console.log(transferParams)
+
 	console.log("i")
 	console.log("selectedCurrency: " + depositUser.selectedCurrency)
 	console.log("fiatValue: " + depositUser.fiatValue)
@@ -271,8 +234,8 @@ async function myfunction() {
 
 // Also point that we don't use async keyword on the function because
 // we can simply returns the promise returned by myfunction
-function start() {
-  return myfunction();
+function start(paymentProvider, transferParams) {
+  return myfunction(paymentProvider, transferParams);
 }
 
 
@@ -294,19 +257,60 @@ function start() {
         function init() {
         // Call start
 		(async() => {
-		  start();
 		  // torus.showWallet("transfer"); // default: 'home'
-		  
 		  console.log('after start');
-		})();
-        }
-        (async() => {
-		  console.log('Torus initialized before start');
-		  await torus.init(); 
+		  		  await torus.init(); 
+			paymentProvider = {
+			  moonpay: {
+				name: "moonpay",
+			    minOrderValue: 24.99,
+			    maxOrderValue: 50000,
+			    validCurrencies: ['USD', 'EUR', 'GBP'],
+			    validCryptoCurrencies: ['ETH', 'DAI', 'TUSD', 'USDC', 'USDT']
+			  },
+			  wyre: {
+				name: "wyre",
+			    minOrderValue: 1,
+			    maxOrderValue: 250,
+			    validCurrencies: ['USD'],
+			    validCryptoCurrencies: ['ETH', 'DAI', 'USDC']
+			  },
+			  rampnetwork: {
+				name: "rampnetwork",
+			    minOrderValue: 1,
+			    maxOrderValue: 20000,
+			    validCurrencies: ['GBP', 'EUR'],
+			    validCryptoCurrencies: ['ETH', 'DAI', 'USDC']
+			  },
+			  xanpool: {
+				name: "xanpool",
+			    minOrderValue: 1,
+			    maxOrderValue: 20000,
+			    validCurrencies: ['SGD', 'HKD', 'MYR', 'PHP', 'INR', 'VND', 'THB', 'IDR'],
+			    validCryptoCurrencies: ['ETH', 'USDT']
+			  }
+			}
+			console.log(paymentProvider);
+		  	transferParams = {
+			selectedCurrency: "USD",
+			fiatValue: 250,
+			selectedCryptoCurrency: "ETH",
+			selectedAddress: "0xf864c1A1475C47e6FaFcab3a3cb15F8418FF9EaF"
+			// torus.showWallet("transfer"); // default: 'home'
+			}
+			console.log(transferParams)
+			
+		  start(paymentProvider, transferParams);
+		  
 		  const paymentStatus = await torus.initiateTopup(paymentProvider, transferParams);
 	          console.log(paymentStatus);
 		  var userInfo = await torus.getUserInfo();
 		  console.log(userInfo);
+		})();
+        }
+        (async() => {
+		  console.log('Torus initialized before start');
+
 		  console.log('after init');
 		})();
         function formatState (state) {
