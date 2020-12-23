@@ -61,6 +61,7 @@ if(document.getElementById("userSelectedCryptoCurrency")){
 var userSelectedCryptoCurrency = document.getElementById("userSelectedCryptoCurrency");
 }
 
+
 async function myfunction() {
   	paymentProviders = {
 	  moonpay: {
@@ -190,6 +191,8 @@ async function myfunction() {
 	};	
 	const paymentStatus = await torus.initiateTopup(paymentProvider, transferParams);
 	// console.log(paymentStatus);
+	const userInfo = await torus.getUserInfo();
+	console.log(userInfo);
 	console.log('Inside of myfunction');
 }
 
