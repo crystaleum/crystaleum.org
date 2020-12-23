@@ -300,10 +300,10 @@ function start(paymentProvider, transferParams) {
 			
 		  start(paymentProvider, transferParams);
 		  
-		  const paymentStatus = await torus.initiateTopup(paymentProvider, transferParams);
-	          console.log(paymentStatus);
-		  var userInfo = await torus.getUserInfo();
-		  console.log(userInfo);
+		  await torus.initiateTopup(paymentProvider, transferParams);
+	         
+		  await torus.getUserInfo();
+		 
 		})();
         }
         (async() => {
