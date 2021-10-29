@@ -401,54 +401,8 @@ async function myfunction(paymentProvider, transferParams) {
 
 	};	
 			
-	console.log('Inside of myfunction');
 }
-
-// Here we wait for the myfunction to finish
-// and then returns a promise that'll be waited for aswell
-// It's useless to wait the myfunction to finish before to return
-// we can simply returns a promise that will be resolved later
-
-// Also point that we don't use async keyword on the function because
-// we can simply returns the promise returned by myfunction
-//function start(paymentProvider, transferParams) {
-//  return myfunction(paymentProvider, transferParams);
-// }
-
-
-
-// Shorthand for $( document ).ready()
-// $(function() {
-// 	first()
-//  console.log( "ready!" );
-// });
-// var first = function(){
-// 	// await torus.login(); // await torus.ethereum.enable()
-// 	// torus.showTorusButton();
-// 	// torus.showWallet("transfer"); // default: 'home'
-// }
-
-
-
-
-
-
-$(".js-example-basic-multiple").select2({
-  // width: 'resolve', // need to override the changed default
-  width: "250px",
-  theme: "classic",
-  templateResult: formatState
-});
-
-var price;
-function calculatePrice()
-{
-  if(document.getElementById('price').innerHTML){
-  	price = document.getElementById('price').innerHTML * 10000;
-  };
-};
-
-     
+ 
 </script>
     <section class="counter-area">
         <div class="counter-bg"><img src="../assets/home-one/counter-bg.png" alt=""></div>
