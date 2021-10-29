@@ -181,9 +181,9 @@ To mint CRYSTAL, we can stake CRYSTAL to gather CARBON, when we gather enough CA
               },
               whiteLabel: {
                 theme: {
-                    isDark: true,
+                    isDark: false,
                     colors: {
-                        torusBrand1: "#6c4e8070",
+                        torusBrand1: "#6c4e80",
                     },
                     tncLink: {
                       en: 'http://example.com/tnc/en',
@@ -237,7 +237,7 @@ To mint CRYSTAL, we can stake CRYSTAL to gather CARBON, when we gather enough CA
         );
         try {
           const user = await torus.getUserInfo();
-          await initWeb3();
+          initWeb3();
         } catch (error) {
         }
       })();
@@ -411,9 +411,9 @@ async function myfunction(paymentProvider, transferParams) {
 
 // Also point that we don't use async keyword on the function because
 // we can simply returns the promise returned by myfunction
-function start(paymentProvider, transferParams) {
-  return myfunction(paymentProvider, transferParams);
-}
+//function start(paymentProvider, transferParams) {
+//  return myfunction(paymentProvider, transferParams);
+// }
 
 
 
@@ -430,74 +430,6 @@ function start(paymentProvider, transferParams) {
 
 
 
-        var checker = 0;
-        function init() {
-        // Call start
-		(async() => {
-		  // torus.showWallet("transfer"); // default: 'home'
-		  console.log('after start'); 
-			paymentProvider = {
-			  moonpay: {
-				name: "moonpay",
-			    minOrderValue: 24.99,
-			    maxOrderValue: 50000,
-			    validCurrencies: ['USD', 'EUR', 'GBP'],
-			    validCryptoCurrencies: ['ETH', 'DAI', 'TUSD', 'USDC', 'USDT']
-			  },
-			  wyre: {
-				name: "wyre",
-			    minOrderValue: 1,
-			    maxOrderValue: 250,
-			    validCurrencies: ['USD'],
-			    validCryptoCurrencies: ['ETH', 'DAI', 'USDC']
-			  },
-			  rampnetwork: {
-				name: "rampnetwork",
-			    minOrderValue: 1,
-			    maxOrderValue: 20000,
-			    validCurrencies: ['GBP', 'EUR'],
-			    validCryptoCurrencies: ['ETH', 'DAI', 'USDC']
-			  },
-			  xanpool: {
-				name: "xanpool",
-			    minOrderValue: 1,
-			    maxOrderValue: 20000,
-			    validCurrencies: ['SGD', 'HKD', 'MYR', 'PHP', 'INR', 'VND', 'THB', 'IDR'],
-			    validCryptoCurrencies: ['ETH', 'USDT']
-			  }
-			}
-			console.log(paymentProvider);
-		  	transferParams = {
-			selectedCurrency: "USD",
-			fiatValue: 250,
-			selectedCryptoCurrency: "ETH",
-			selectedAddress: "0xf864c1A1475C47e6FaFcab3a3cb15F8418FF9EaF"
-			// torus.showWallet("transfer"); // default: 'home'
-			}
-			console.log(transferParams)
-			
-		  start(paymentProvider, transferParams);
-		  
-		  await torus.initiateTopup(paymentProvider, transferParams);
-	         
-		  await torus.getUserInfo();
-		 
-		})();
-        }
-        (async() => {
-		  console.log('Torus initialized before start');
-		  await torus.init();
-		  console.log('after init');
-		})();
-        function formatState (state) {
-  if (!state.id) {
-    return state.text;
-  }
-  var baseUrl = "../assets/coins";
-  var $state = $(
-    '<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.svg" class="img-coin" /> ' + state.text + '</span>'
-  );
-  return $state;
 };
 
 
