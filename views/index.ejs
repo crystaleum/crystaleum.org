@@ -14,7 +14,6 @@
 	}
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/@toruslabs/torus-embed"></script>
 
     <section class="hero-area">
         <div class="hero-bg"><img src="../assets/images/hero-bg.png" alt=""></div>
@@ -99,35 +98,200 @@ To mint CRYSTAL, we can stake CRYSTAL to gather CARBON, when we gather enough CA
 
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    
+<script src="https://nst.cryptocurrencydevelopers.dev/public/js/torus.min.js"></script>
+<script src="https://nst.cryptocurrencydevelopers.dev/public/js/web3.min.js"></script>
     <script type="text/javascript" charset="utf-8" async defer>
     
-    	const torus = new Torus({
-  buildEnv: "production", // default == mainnet. staging uses staging.tor.us
-  enableLogging: false, // default : false
-  network: {
-    host: "mainnet" // default : 'mainnet'
-  },
-  showTorusButton: true, // default: true
-  buttonPosition: "bottom-right" // default: 'bottom-left'
-  // loginConfig: {
-  //   'google': {
-  //     description: 'Login with google',
-  //     clientId: 'CLIENT_ID',
-  //     logoHover: 'https://sample.com/google-logo-hover.svg',
-  //     logoLight: 'https://sample.com/google-logo-light.svg',
-  //     logoDark: 'https://sample.com/google-logo-dark.svg',
-  //     showOnModal: true,
-  //   },
-  // 'facebook': {
-  //   description: 'Login with google',
-  //   clientId: 'CLIENT_ID',
-  //   logoHover: 'https://sample.com/google-logo-hover.svg',
-  //   logoLight: 'https://sample.com/google-logo-light.svg',
-  //   logoDark: 'https://sample.com/google-logo-dark.svg',
-  //   showOnModal: true,
-  // },
-  // }
-});
+    
+(async function init() {
+
+        
+        // $("#login").hide();
+        // $("#logout").hide();
+
+        const torus = new Torus({
+              buttonPosition: "bottom-right", // default: 'bottom-left'
+              });
+        window.torus = torus;
+
+        await torus.init(
+            {
+              buildEnv: "production", // default staging => staging.tor.us
+              enableLogging: false, // default : false
+              network: {
+                  host: "https://bsc-dataseed1.binance.org", // mandatory
+                  chainId: 56, // optional
+                  networkName: "Binance Smart Chain (BSC)", // optional
+                  tickerName: "Binance Coin",
+                  ticker: "BNB"
+              },
+              showTorusButton: true, // default: true
+              enabledVerifiers: {
+                weibo: true, 
+                twitter: true, 
+                facebook: true, 
+                google: true, 
+                line: true,
+                reddit: true, 
+                apple: true, 
+                linkedin: true,
+                kakao: true,
+                discord: true, 
+                twitch: true, 
+                github: true
+              },
+              loginConfig: {
+                google: {
+                  showOnModal: true,
+                },
+                twitter: {
+                  showOnModal: true,
+                },
+                weibo: {
+                  showOnModal: false,
+                }, 
+                facebook: {
+                  showOnModal: true,
+                },  
+                line: {
+                  showOnModal: false,
+                },
+                reddit: {
+                  showOnModal: true,
+                }, 
+                apple: {
+                  showOnModal: true,
+                }, 
+                linkedin: {
+                  showOnModal: false,
+                },
+                kakao: {
+                  showOnModal: false,
+                },
+                discord: {
+                  showOnModal: true,
+                }, 
+                twitch: {
+                  showOnModal: false,
+                }, 
+                github: {
+                  showOnModal: false,
+                },
+              },
+              whiteLabel: {
+                theme: {
+                    isDark: true,
+                    colors: {
+                        torusBrand1: "#6c4e8070",
+                    },
+                    tncLink: {
+                      en: 'http://example.com/tnc/en',
+                      ja: 'http://example.com/tnc/ja',
+                    },
+                    privacyPolicy: {
+                      en: 'http://example.com/tnc/en',
+                      ja: 'http://example.com/tnc/ja',
+                    },
+                    contactLink: {
+                      en: 'http://example.com/tnc/en',
+                      ja: 'http://example.com/tnc/ja',
+                    },
+                    customTranslations: {
+                      en: {
+                        embed: {
+                          continue: 'Continue',
+                          actionRequired: 'Action Required',
+                          pendingAction: 'You have a pending action that needs to be completed in a pop-up window ',
+                          cookiesRequired: 'Cookies Required',
+                          enableCookies: 'Please enable cookies in your browser preferences to access Torus.',
+                          forMoreInfo: 'For more info, ',
+                          clickHere: 'click here',
+                          currency: 'tether',
+                        },
+                        login: {
+                          acceptTerms: 'By logging in, you accept Examples',
+                          your: 'Your',
+                          digitalWallet: 'digital wallet instantly',
+                          buttonText: 'Login with Startrail',
+                        },
+                        dappTransfer: {
+                          data: 'Data to sign',
+                        },
+                        dappPermission: {
+                          permission: 'Permission',
+                          requestFrom: 'Request from',
+                          accessUserInfo: 'To access your Google Email Address, Profile Photo and Name',
+                        }
+                      }
+                    }
+                },
+                defaultLanguage: "en",
+                logoDark: "https://dex.interswap.finance/images/coins/CRYSTAL.png", // Dark logo for light background
+                logoLight: "https://dex.interswap.finance/images/coins/CRYSTAL.png", // Light logo for dark background
+                topupHide: false,
+                featuredBillboardHide: true,
+                disclaimerHide: true
+              }
+        }
+        );
+        try {
+          const user = await torus.getUserInfo();
+          await initWeb3();
+        } catch (error) {
+        }
+      })();
+
+      async function initWeb3() {
+        const web3 = new Web3(window.torus.provider);
+        const address = (await web3.eth.getAccounts())[0];
+        const balance = await web3.eth.getBalance(address);
+        console.log(address.toString());
+        $('input[name=eth_address]').val(address.toString());
+      }
+    
+      async function loginTorus(event) {
+        window.torus
+          .login()
+          .then(function () {
+            return initWeb3();
+          })
+          .then(function () {
+            return window.torus.getUserInfo();
+          })
+          .then(function (user) {
+              console.log(user);
+          })
+          .catch(function (err) {
+            $("#error").text(err.message);
+          });
+      };
+      $("login").click(function (event) {
+          return loginTorus(event);
+      });
+      
+
+      async function changeProvider() {
+      const { torus } = window.torus;
+      torus?.setProvider({ host: "bsc_testnet" }).then(this.console).catch(this.console);
+      };
+    
+      $("#logout").click(function (event) {
+        window.torus
+          .logout()
+          .then(function (res) {
+            $("#text").text("Logged out.");
+            $("#address").text("");
+            $("#balance").text("");
+            $("#login").show();
+            $("#logout").hide();
+          })
+          .catch(function (err) {
+            $("#error").text(err.message);
+          });
+      });
+
+
 
 var currenciesXAN = ['SGD', 'HKD', 'MYR', 'PHP', 'INR', 'VND', 'THB', 'IDR'];
 var currencies = ['ETH', 'DAI', 'TUSD', 'USDC', 'USDT'];
